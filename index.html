@@ -24,7 +24,6 @@ canvas {
   <canvas id="pinkboard"></canvas>
   <script>
   /*
- * Settings test2
  */
 var settings = {
   particles: {
@@ -36,11 +35,9 @@ var settings = {
   },
 };
 /*
- * RequestAnimationFrame polyfill by Erik Möller test2
  */
 (function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
 /*
- * Point class test2
  */
 var Point = (function() {
   function Point(x, y) {
@@ -67,7 +64,7 @@ var Point = (function() {
   return Point;
 })();
 /*
- * Particle class test2
+ * Particle class test1
  */
 var Particle = (function() {
   function Particle() {
@@ -103,7 +100,7 @@ var Particle = (function() {
   return Particle;
 })();
 /*
- * ParticlePool class test2
+ * ParticlePool class test1
  */
 var ParticlePool = (function() {
   var particles,
@@ -112,7 +109,11 @@ var ParticlePool = (function() {
       duration    = settings.particles.duration;
  
   function ParticlePool(length) {
+<<<<<<< .mine
     // create and populate particle pool test2
+=======
+    // create and populate particle pool test1
+>>>>>>> .theirs
     particles = new Array(length);
     for (var i = 0; i < particles.length; i++)
       particles[i] = new Particle();
@@ -120,7 +121,7 @@ var ParticlePool = (function() {
   ParticlePool.prototype.add = function(x, y, dx, dy) {
     particles[firstFree].initialize(x, y, dx, dy);
    
-    // handle circular queue  test2
+    // handle circular queue test1
     firstFree++;
     if (firstFree   == particles.length) firstFree   = 0;
     if (firstActive == firstFree       ) firstActive++;
